@@ -1,0 +1,43 @@
+/* layout.css */
+
+img,
+video {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* 全屏背景容器 */
+.page-background {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: black; /* fallback 背景 */
+}
+
+/* 背景视频样式 */
+.bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+  filter: brightness(0.6) contrast(1.2); /* 可适当调暗对比 */
+  opacity: 1; /* 100% 不透明 */
+}
+
+/* 内容容器位于最上层 */
+.content-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+}
+

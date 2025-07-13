@@ -1,103 +1,73 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import { useEffect, useState, useRef } from 'react'
+import MenuPanel from '@/app/components/MenuPanel/MenuPanel'
+import AboutPanel from '@/app/Pages/about/page'
+import ProjectsPanel from '@/app/Pages/projects/page'
+import ExperiencePanel from '@/app/Pages/Experience/page'
+import EducationPanel from './Pages/Education/page'
+import SettingPanel from './Pages/settings/page'
+import LinkPanel from './Pages/Link/page'
+
+export default function HomePage() {
+  const [, setShowMenu] = useState(false)
+  const [activePanel, setActivePanel] = useState<'menu' | 'about' | 'projects' | 'settings' | 'link' | 'experience' | 'education' | null>('menu')
+
+
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    setTimeout(() => setShowMenu(true), 300)
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.75 // 设置为半速播放
+    }
+  }, [])
+
+  const handlePanelSelect = (panel: string) => {
+    const keepMenuOpen = ['about', 'settings', 'link'] // 这些 panel 会保留 MenuPanel 打开
+    const delay = 400
+
+    // 立即清除所有 panel（为了触发动画）
+    setActivePanel(null)
+
+    // 设置下一个 panel，带动画延迟
+    setTimeout(() => {
+      if (keepMenuOpen.includes(panel)) {
+        setActivePanel('menu') // 菜单保留
+      }
+      setActivePanel(panel as any)
+    }, delay)
+  }
+
+
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="page-background">
+      {/* 背景视频 */}
+      <video
+        ref={videoRef}
+        className="bg-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+      >
+        <source src="/yilidan2-bg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      {/* 遮罩层（覆盖视频，但在菜单之下） */}
+      <div className="overlay" />
+
+      {/* 主内容层 */}
+      <div className="content-container">
+        <MenuPanel show={activePanel === 'menu' || ['about', 'settings', 'link', 'experience', 'education' ].includes(activePanel!)} onSelect={handlePanelSelect} />
+        <AboutPanel show={activePanel === 'about'} />
+        <ProjectsPanel show={activePanel === 'projects'} onBackToMenu={() => setActivePanel('menu')}/>
+        <ExperiencePanel show={activePanel === 'experience'} />
+        <EducationPanel show={activePanel === 'education'} />
+        <SettingPanel show={activePanel === 'settings'} />
+        <LinkPanel show={activePanel === 'link'} />
+      </div>
     </div>
-  );
+  )
 }

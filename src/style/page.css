@@ -1,0 +1,14 @@
+
+.page-background {
+  @apply relative h-screen w-screen overflow-hidden;
+}
+
+
+.overlay {
+  @apply absolute inset-0 bg-black bg-opacity-40;
+  z-index: 1;
+}
+
+.content-container {
+  @apply relative z-10 flex items-start justify-center h-full;
+}
