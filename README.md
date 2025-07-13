@@ -1,2 +1,2 @@
 # My-portfolior
- My showcase
+ My Vibe coding showcase.
