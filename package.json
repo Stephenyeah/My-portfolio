@@ -12,7 +12,6 @@
     "@fontsource/cinzel": "^5.2.5",
     "framer-motion": "^12.19.2",
     "howler": "^2.2.4",
-    "myportfilio": "file:",
     "next": "15.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
