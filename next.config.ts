@@ -2,8 +2,8 @@
 const nextConfig = {
   output: 'export',
   distDir: 'out',
-  basePath: '/My-portfolior',
-  assetPrefix: '/My-portfolior/',
+  basePath: '/My-portfolio',
+  assetPrefix: '/My-portfolio/',
 }
 
 module.exports = nextConfig

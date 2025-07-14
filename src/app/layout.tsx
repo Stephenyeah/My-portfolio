@@ -6,7 +6,7 @@ import "./layout.css"
 import '@fontsource/cinzel';
 
 export const metadata: Metadata = {
-  title: '个人portfolior',
+  title: 'My portfolio',
   description: '关于StephenYang个人网站',
 }
 
