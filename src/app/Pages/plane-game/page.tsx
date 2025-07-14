@@ -59,8 +59,8 @@ export default function PlaneGame() {
       explosionImages.current.push(img);
     }
 
-    shootSound.current = new Audio("/yilidan-bg.mp4");
-    explodeSound.current = new Audio("/yilidan2-bg.mp4");
+    shootSound.current = new Audio("/sounds/laser-shot.wav");
+    explodeSound.current = new Audio("/sounds/dyingsphere__15.wav");
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key in keyState.current) {

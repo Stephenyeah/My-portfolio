@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "@fontsource/cinzel": "^5.2.5",
