@@ -9,38 +9,40 @@ import EducationPanel from './components/Education/EducationPanel'
 import SettingPanel from './components/settings/SettingPanel'
 import LinkPanel from './components/Link/LinkPanel'
 
+type PanelType = 'menu' | 'about' | 'projects' | 'settings' | 'link' | 'experience' | 'education' | null
+
 export default function HomePage() {
   const [, setShowMenu] = useState(false)
-  const [activePanel, setActivePanel] = useState<
-    'menu' | 'about' | 'projects' | 'settings' | 'link' | 'experience' | 'education' | null
-  >('menu')
-
+  const [activePanel, setActivePanel] = useState<PanelType>('menu')
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     setTimeout(() => setShowMenu(true), 300)
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.75 // 设置为半速播放
+      videoRef.current.playbackRate = 0.75
     }
   }, [])
 
   const handlePanelSelect = (panel: string) => {
-    const keepMenuOpen = ['about', 'settings', 'link'] // 这些 panel 会保留 MenuPanel 打开
+    const allowedPanels: PanelType[] = ['menu', 'about', 'projects', 'settings', 'link', 'experience', 'education']
+    if (!allowedPanels.includes(panel as PanelType)) return
+
+    const keepMenuOpen: PanelType[] = ['about', 'settings', 'link']
     const delay = 400
 
     setActivePanel(null)
 
     setTimeout(() => {
-      if (keepMenuOpen.includes(panel)) {
+      if (keepMenuOpen.includes(panel as PanelType)) {
         setActivePanel('menu')
       }
-      setActivePanel(panel as any)
+      setActivePanel(panel as PanelType)
     }, delay)
   }
 
+
   return (
     <div className="page-background">
-      {/* 背景视频 */}
       <video
         ref={videoRef}
         className="bg-video"
@@ -53,10 +55,8 @@ export default function HomePage() {
         Your browser does not support the video tag.
       </video>
 
-      {/* 遮罩层 */}
       <div className="overlay" />
 
-      {/* 主内容 */}
       <div className="content-container">
         <MenuPanel
           show={
