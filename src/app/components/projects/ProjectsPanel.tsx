@@ -8,7 +8,7 @@ const projects = [
   {
     id: 'miniapp',
     title: 'Friends in Finland',
-    image: '/images/projects-Friends-in-Finland/1.png',
+    image: '${basePath}/images/projects-Friends-in-Finland/1.png',
     description: 'A WeChat Mini Program built with Vue, Spring Boot, and MySQL.',
     tech: ['Vue', 'Spring Boot', 'MyBatis', 'MySQL'],
     link: 'https://www.figma.com/proto/4RXN7A0j9BiFyZhw05WAEb/New-life-in-Finland?kind=proto&node-id=76-27&page-id=0%3A1&scaling=scale-down&starting-point-node-id=61%3A164&type=design',
@@ -16,7 +16,7 @@ const projects = [
   {
     id: 'forum',
     title: 'LadyJustice AI',
-    image: '/images/ai-legal-thumb.png',
+    image: '${basePath}/images/ai-legal-thumb.png',
     description: 'An AI legal assistant built with Azure, React, and FastAPI.',
     tech: ['React', 'Azure', 'FastAPI', 'Python'],
     link: 'https://www.linkedin.com/company/justice-4-0/about/',
@@ -24,7 +24,7 @@ const projects = [
   {
     id: 'plane-game',
     title: 'WW2 Plane Shooter Game',
-    image: '/images/planegame/project-planegame-1.png',
+    image: '${basePath}/images/planegame/project-planegame-1.png',
     description: 'A 2D airplane shooting game built with TypeScript and Canvas in Next.js. Very easy to get 100 points',
     tech: ['Next.js', 'TypeScript', 'Canvas'],
     link: '/Pages/plane-game',
@@ -32,7 +32,7 @@ const projects = [
   {
     id: 'customers-trainings',
     title: 'Customers Trainings',
-    image: '/images/customer-training/1.png',
+    image: '${basePath}/images/customer-training/1.png',
     description: 'An internal training management system that allows admins to record customer training participation and track progress. Features login, customer list, training form input, and statistics view.',
     tech: ['React', 'Vite', 'REST API'],
     link: 'https://github.com/Stephenyeah/Customers_Trainings',
@@ -40,7 +40,7 @@ const projects = [
   {
     id: 'info-security',
     title: 'Information Security - GFW Overview',
-    image: '/images/internet-security/1.png',  // 上传到 public 路径中
+    image: '${basePath}/images/internet-security/1.png',  // 上传到 public 路径中
     description: 'An educational project explaining the Great Firewall (GFW) and firewall concepts with visual and text-based insights.',
     tech: ['HTML', 'CSS', 'GitHub Pages', 'Cybersecurity'],
     link: 'https://stephenyeah.github.io/Information-security/',

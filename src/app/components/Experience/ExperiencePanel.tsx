@@ -33,10 +33,10 @@ const experiences: Experience[] = [
     description:
       'Continue developing the AI chat functionality for legal issues on the Azure platform, including login and registration, file upload, and backend customer data storage. The front-end is built using React TypeScript. Deployment to Azure cloud, server-side AI model modification, and performance testing.',
     images: [
-      { id: 1, url: '/images/project-AI-snowlex/1.png', title: 'Snowlx legal AI Chat Interface' },
-      { id: 2, url: '/images/project-AI-snowlex/4.png', title: 'Azure Dashboard' },
-      { id: 3, url: '/images/project-AI-snowlex/3.png', title: 'AI thought process' },
-      { id: 4, url: '/images/project-AI-snowlex/2.png', title: 'User Authentication' }
+      { id: 1, url: '${basePath}${basePath}/images/project-AI-snowlex/1.png', title: 'Snowlx legal AI Chat Interface' },
+      { id: 2, url: '${basePath}/images/project-AI-snowlex/4.png', title: 'Azure Dashboard' },
+      { id: 3, url: '${basePath}/images/project-AI-snowlex/3.png', title: 'AI thought process' },
+      { id: 4, url: '${basePath}/images/project-AI-snowlex/2.png', title: 'User Authentication' }
     ]
   },
   {
@@ -46,9 +46,9 @@ const experiences: Experience[] = [
     description:
       'Responsible for web front-end and back-end development, fulfilling customer requirements, coordinating backend services, deploying to AWS cloud, and optimizing deployment following AWS architecture best practices.',
     images: [
-      { id: 1, url: '/images/project-nodic-shine/1.png', title: 'Travel Website' },
-      { id: 2, url: '/images/project-nodic-shine/3.png', title: 'AWS Architecture' },
-      { id: 3, url: '/images/project-nodic-shine/2.png', title: 'Booking System' }
+      { id: 1, url: '${basePath}/images/project-nodic-shine/1.png', title: 'Travel Website' },
+      { id: 2, url: '${basePath}/images/project-nodic-shine/3.png', title: 'AWS Architecture' },
+      { id: 3, url: '${basePath}/images/project-nodic-shine/2.png', title: 'Booking System' }
     ]
   },
     {
@@ -58,18 +58,18 @@ const experiences: Experience[] = [
       description:
         'Participated in the “The Hacker’s Journey” course at Haaga-Helia, focusing on ethical hacking techniques, Linux terminal operations, Kali tools, and practical cybersecurity challenges. Developed a hands-on understanding of system vulnerabilities, privilege escalation, and network intrusion tactics in a controlled environment.',
       images: [
-        { id: 1, url: '/images/internet-security/1.png', title: 'Reconstruct, Detect, Block' },
-        { id: 2, url: '/images/internet-security/2.png', title: 'DNS Spoofing & IP Blacklisting' },
-        { id: 3, url: '/images/internet-security/3.png', title: 'Sensitive Word Filtering in Real Time' },
-        { id: 4, url: '/images/internet-security/4.png', title: 'Active Probing & Protocol Recognition' },
-        { id: 5, url: '/images/internet-security/5.png', title: 'Breaking Through the Wall' },
-        { id: 6, url: '/images/internet-security/6.png', title: 'VPN vs Proxy: Two Ways Out' },
-        { id: 7, url: '/images/internet-security/7.png', title: 'Encrypted Proxies: Shadowsocks & V2ray' },
-        { id: 8, url: '/images/internet-security/8.png', title: 'The TOR Dilemma' },
-        { id: 9, url: '/images/internet-security/9.png', title: 'The Firewall That Listens' },
-        { id: 10, url: '/images/internet-security/10.png', title: 'A Wall Beyond Geography' },
-        { id: 11, url: '/images/internet-security/11.png', title: 'Censorship by Design: A Technical Overview' },
-        { id: 12, url: '/images/internet-security/12.png', title: 'Digital Sovereignty or Suppression?' }
+        { id: 1, url: '${basePath}/images/internet-security/1.png', title: 'Reconstruct, Detect, Block' },
+        { id: 2, url: '${basePath}/images/internet-security/2.png', title: 'DNS Spoofing & IP Blacklisting' },
+        { id: 3, url: '${basePath}/images/internet-security/3.png', title: 'Sensitive Word Filtering in Real Time' },
+        { id: 4, url: '${basePath}/images/internet-security/4.png', title: 'Active Probing & Protocol Recognition' },
+        { id: 5, url: '${basePath}/images/internet-security/5.png', title: 'Breaking Through the Wall' },
+        { id: 6, url: '${basePath}/images/internet-security/6.png', title: 'VPN vs Proxy: Two Ways Out' },
+        { id: 7, url: '${basePath}/images/internet-security/7.png', title: 'Encrypted Proxies: Shadowsocks & V2ray' },
+        { id: 8, url: '${basePath}/images/internet-security/8.png', title: 'The TOR Dilemma' },
+        { id: 9, url: '${basePath}/images/internet-security/9.png', title: 'The Firewall That Listens' },
+        { id: 10, url: '${basePath}/images/internet-security/10.png', title: 'A Wall Beyond Geography' },
+        { id: 11, url: '${basePath}/images/internet-security/11.png', title: 'Censorship by Design: A Technical Overview' },
+        { id: 12, url: '${basePath}/images/internet-security/12.png', title: 'Digital Sovereignty or Suppression?' }
       ]
     },
   {
@@ -79,11 +79,11 @@ const experiences: Experience[] = [
     description:
       'My friend and I, who work at Huawei in China, have developed an embedded WeChat mini-program together. “New Life In Finland” is an all-in-one mini program designed for Chinese in Finland to share information, connect socially, and support daily life. Frontend WeChat Mini Program (Vue), Backend (Spring Boot + MyBatis + MySQL).',
     images: [
-      { id: 1, url: '/images/projects-Friends-in-Finland/1.png', title: 'WeChat Mini Program' },
-      { id: 2, url: '/images/projects-Friends-in-Finland/2.png', title: 'Home page' },
-      { id: 3, url: '/images/projects-Friends-in-Finland/3.png', title: 'Tour and detail page' },
-      { id: 4, url: '/images/projects-Friends-in-Finland/4.png', title: 'Publish function' },
-      { id: 5, url: '/images/projects-Friends-in-Finland/5.png', title: 'Date of market' }
+      { id: 1, url: '${basePath}/images/projects-Friends-in-Finland/1.png', title: 'WeChat Mini Program' },
+      { id: 2, url: '${basePath}/images/projects-Friends-in-Finland/2.png', title: 'Home page' },
+      { id: 3, url: '${basePath}/images/projects-Friends-in-Finland/3.png', title: 'Tour and detail page' },
+      { id: 4, url: '${basePath}/images/projects-Friends-in-Finland/4.png', title: 'Publish function' },
+      { id: 5, url: '${basePath}/images/projects-Friends-in-Finland/5.png', title: 'Date of market' }
     ]
   },
   {
@@ -93,8 +93,8 @@ const experiences: Experience[] = [
     description:
       'Supported child care activities, engaged children in learning and play, and ensured a safe environment.',
     images: [
-      { id: 1, url: '/images/cca/1.png', title: 'Education Certificate' },
-      { id: 2, url: '/images/cca/2.png', title: 'Activity Planning' }
+      { id: 1, url: '${basePath}/images/cca/1.png', title: 'Education Certificate' },
+      { id: 2, url: '${basePath}/images/cca/2.png', title: 'Activity Planning' }
     ]
   },
   {
@@ -104,9 +104,9 @@ const experiences: Experience[] = [
     description:
       'I’m responsible for maintaining the network and over 200 computers at the Yuexiu District Taxation Bureau, including switches, routers, and file servers. I quickly resolve computer issues for colleagues and use my network security knowledge to handle server room problems efficiently.',
     images: [
-      { id: 1, url: 'images/tax-bureau/1.png', title: 'Network Infrastructure' },
-      { id: 2, url: 'images/tax-bureau/2.png', title: 'Server Management' },
-      { id: 3, url: 'images/tax-bureau/3.png', title: 'System Monitoring' }
+      { id: 1, url: '${basePath}/images/tax-bureau/1.png', title: 'Network Infrastructure' },
+      { id: 2, url: '${basePath}/images/tax-bureau/2.png', title: 'Server Management' },
+      { id: 3, url: '${basePath}/images/tax-bureau/3.png', title: 'System Monitoring' }
     ]
   },
   {
@@ -116,11 +116,11 @@ const experiences: Experience[] = [
     description:
       'Assisted in CAD façade drawings, 3D modeling in 3ds Max, rendering, VR visualization, and Photoshop diagramming.',
     images: [
-      { id: 1, url: '/images/guangzhou-huadiyuan/1.png', title: '3D Modeling' },
-      { id: 2, url: '/images/guangzhou-huadiyuan/2.png', title: 'Rendering' },
-      { id: 3, url: '/images/guangzhou-huadiyuan/3.png', title: 'Rendering' },
-      { id: 4, url: '/images/guangzhou-huadiyuan/4.png', title: 'Architectural Rendering' },
-      { id: 5, url: '/images/guangzhou-huadiyuan/5.png', title: 'Architectural Rendering' }
+      { id: 1, url: '${basePath}/images/guangzhou-huadiyuan/1.png', title: '3D Modeling' },
+      { id: 2, url: '${basePath}/images/guangzhou-huadiyuan/2.png', title: 'Rendering' },
+      { id: 3, url: '${basePath}/images/guangzhou-huadiyuan/3.png', title: 'Rendering' },
+      { id: 4, url: '${basePath}/images/guangzhou-huadiyuan/4.png', title: 'Architectural Rendering' },
+      { id: 5, url: '${basePath}/images/guangzhou-huadiyuan/5.png', title: 'Architectural Rendering' }
     ]
   }
 ]

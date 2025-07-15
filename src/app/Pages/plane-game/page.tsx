@@ -28,6 +28,8 @@ export default function PlaneGame() {
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
 
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
   const enemySpawnTimer = useRef(0);
 
   const keyState = useRef({
@@ -44,23 +46,23 @@ export default function PlaneGame() {
     if (!ctx) return;
 
     const bg = new Image();
-    bg.src = "/images/planegame/bg.jpg";
+    bg.src = `${basePath}/images/planegame/bg.jpg`;
 
     const planeImg = new Image();
-    planeImg.src = "/images/planegame/plane.png";
+    planeImg.src = `${basePath}/images/planegame/plane.png`;
 
     const enemyImg = new Image();
-    enemyImg.src = "/images/planegame/enemy.png";
+    enemyImg.src = `${basePath}/images/planegame/enemy.png`;
 
     explosionImages.current = [];
     for (let i = 1; i <= 16; i++) {
       const img = new Image();
-      img.src = `/images/planegame/explode/e${i}.gif`;
+      img.src = `${basePath}/images/planegame/explode/e${i}.gif`;
       explosionImages.current.push(img);
     }
 
-    shootSound.current = new Audio("/sounds/laser-shot.wav");
-    explodeSound.current = new Audio("/sounds/dyingsphere__15.wav");
+      shootSound.current = new Audio(`${basePath}/sounds/laser-shot.wav`);
+      explodeSound.current = new Audio(`${basePath}/sounds/dyingsphere__15.wav`);
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key in keyState.current) {

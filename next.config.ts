@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
+  assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH
+    ? process.env.NEXT_PUBLIC_BASE_PATH + '/'
+    : '/',
   distDir: 'out',
-  basePath: '/My-portfolio',
-  assetPrefix: '/My-portfolio/',
-}
+};
 
-module.exports = nextConfig
+export default nextConfig;
