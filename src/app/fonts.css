@@ -1,0 +1,24 @@
+/* src/app/fonts.css */
+
+/* 示例 Google Fonts 字体 */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+
+/* 可选：自定义本地字体 (如果有本地文件) */
+/* @font-face {
+  font-family: 'MyCustomFont';
+  src: url('/fonts/MyCustomFont.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+} */
+
+:root {
+  --font-cinzel: 'Cinzel', serif;
+}
+
+/* Tailwind 兼容的全局字体 */
+body {
+  font-family: var(--font-cinzel), system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  color: #facc15; /* 例如黄色文字 */
+  background-color: #000; /* 深色背景 */
+}

@@ -1,14 +1,19 @@
-@import '@fontsource/cinzel';
+@import './fonts.css';
+@import "tailwindcss";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 全局 CSS 建议直接用原生 CSS 定义基本样式，不建议用 @apply */
 :root {
   --base-path: '/My-portfolio';
+  --font-main: 'Cinzel', Georgia, serif;
 }
 
+/* 推荐直接用标准 CSS */
 body {
-  @apply bg-black text-white;
-  font-family: 'Cinzel', Georgia, serif;
+  background-color: #000;
+  color: #fff;
+  font-family: var(--font-main), sans-serif;
 }

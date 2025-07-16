@@ -2,13 +2,17 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import '@fontsource/cinzel'
+// ✅ 使用 next/font/google
+import { Cinzel } from 'next/font/google'
+const cinzel = Cinzel({ subsets: ['latin'], weight: ['400', '700'] })
+
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
 const projects = [
   {
     id: 'miniapp',
     title: 'Friends in Finland',
-    image: '${basePath}/images/projects-Friends-in-Finland/1.png',
+    image: `${basePath}/images/projects-Friends-in-Finland/1.png`,
     description: 'A WeChat Mini Program built with Vue, Spring Boot, and MySQL.',
     tech: ['Vue', 'Spring Boot', 'MyBatis', 'MySQL'],
     link: 'https://www.figma.com/proto/4RXN7A0j9BiFyZhw05WAEb/New-life-in-Finland?kind=proto&node-id=76-27&page-id=0%3A1&scaling=scale-down&starting-point-node-id=61%3A164&type=design',
@@ -16,7 +20,7 @@ const projects = [
   {
     id: 'forum',
     title: 'LadyJustice AI',
-    image: '${basePath}/images/ai-legal-thumb.png',
+    image: `${basePath}/images/ai-legal-thumb.png`,
     description: 'An AI legal assistant built with Azure, React, and FastAPI.',
     tech: ['React', 'Azure', 'FastAPI', 'Python'],
     link: 'https://www.linkedin.com/company/justice-4-0/about/',
@@ -24,7 +28,7 @@ const projects = [
   {
     id: 'plane-game',
     title: 'WW2 Plane Shooter Game',
-    image: '${basePath}/images/planegame/project-planegame-1.png',
+    image: `${basePath}/images/planegame/project-planegame-1.png`,
     description: 'A 2D airplane shooting game built with TypeScript and Canvas in Next.js. Very easy to get 100 points',
     tech: ['Next.js', 'TypeScript', 'Canvas'],
     link: '/Pages/plane-game',
@@ -32,7 +36,7 @@ const projects = [
   {
     id: 'customers-trainings',
     title: 'Customers Trainings',
-    image: '${basePath}/images/customer-training/1.png',
+    image: `${basePath}/images/customer-training/1.png`,
     description: 'An internal training management system that allows admins to record customer training participation and track progress. Features login, customer list, training form input, and statistics view.',
     tech: ['React', 'Vite', 'REST API'],
     link: 'https://github.com/Stephenyeah/Customers_Trainings',
@@ -40,7 +44,7 @@ const projects = [
   {
     id: 'info-security',
     title: 'Information Security - GFW Overview',
-    image: '${basePath}/images/internet-security/1.png',  // 上传到 public 路径中
+    image: `${basePath}/images/internet-security/1.png`,  // 上传到 public 路径中
     description: 'An educational project explaining the Great Firewall (GFW) and firewall concepts with visual and text-based insights.',
     tech: ['HTML', 'CSS', 'GitHub Pages', 'Cybersecurity'],
     link: 'https://stephenyeah.github.io/Information-security/',
@@ -64,7 +68,7 @@ export default function ProjectsPanel({
       initial={{ y: -500, opacity: 0 }}
       animate={{ y: show ? 100 : -800, opacity: show ? 1 : 0 }}
       transition={{ type: 'spring', stiffness: 65 }}
-      className="absolute top-1/2 left-80 -translate-y-2/3 z-40  w-[1280px] max-h-[95vh] min-h-[700px] max-w-7xl flex bg-gradient-to-br from-black to-gray-900 border-4 border-amber-700 rounded-xl shadow-[0_0_40px_rgba(255,191,0,0.3)] overflow-hidden"
+      className= {`absolute top-1/2 left-80 -translate-y-1/10 z-40  w-[1280px] max-h-[95vh] min-h-[700px] max-w-7xl flex bg-gradient-to-br from-black to-gray-900 border-4 border-amber-700 rounded-xl shadow-[0_0_40px_rgba(255,191,0,0.3)] overflow-hidden ${cinzel.className}`}
     >
       {/* 左侧：项目预览内容 */}
       <div className="w-2/3 p-6 text-amber-100 flex flex-col justify-between">

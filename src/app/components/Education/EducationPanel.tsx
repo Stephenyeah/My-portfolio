@@ -1,7 +1,13 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import '@fontsource/cinzel'
+// ✅ 改用 next/font/google
+import { Cinzel } from 'next/font/google'
+
+const cinzel = Cinzel({
+  subsets: ['latin'],
+  weight: ['400', '700'],
+})
 
 const educationNodes = [
   {
@@ -54,9 +60,9 @@ export default function EducationPanel({ show }: { show: boolean }) {
       initial={{ y: -500, opacity: 0 }}
       animate={{ y: show ? 100 : -800, opacity: show ? 1 : 0 }}
       transition={{ type: 'spring', stiffness: 65 }}
-      className="absolute z-50 left-3/7 top-1/3 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[700px] bg-gradient-to-br from-gray-900 to-black border-4 border-amber-700 rounded-xl shadow-[0_0_40px_rgba(255,191,0,0.4)] p-8 overflow-hidden"
+      className={`absolute z-50 left-3/7 top-1/3 -translate-x-1/2 -translate-y-1/10 w-[1000px] h-[700px] bg-gradient-to-br from-gray-900 to-black border-4 border-amber-700 rounded-xl shadow-[0_0_40px_rgba(255,191,0,0.4)] p-8 overflow-hidden ${cinzel.className}`}
     >
-      <h1 className="text-center text-3xl font-[Cinzel] font-bold text-amber-400 mb-8 tracking-widest">
+      <h1 className="text-center text-3xl font-[Cinzel] font-bold text-amber-400 mb-8 tracking-widest" >
         EDUCATION TREE
       </h1>
       <div className="relative w-full h-full">

@@ -11,7 +11,7 @@ import LinkPanel from './components/Link/LinkPanel'
 
 type PanelType = 'menu' | 'about' | 'projects' | 'settings' | 'link' | 'experience' | 'education' | null
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''; 
 
 export default function HomePage() {
   const [, setShowMenu] = useState(false)
