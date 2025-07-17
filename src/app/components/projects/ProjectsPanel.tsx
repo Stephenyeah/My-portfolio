@@ -31,7 +31,7 @@ const projects = [
     image: `${basePath}/images/planegame/project-planegame-1.png`,
     description: 'A 2D airplane shooting game built with TypeScript and Canvas in Next.js. Very easy to get 100 points',
     tech: ['Next.js', 'TypeScript', 'Canvas'],
-    link: '/Pages/plane-game',
+    link: `${basePath}/Pages/plane-game`,
   },
   {
     id: 'customers-trainings',

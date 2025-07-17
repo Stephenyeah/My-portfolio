@@ -11,9 +11,4 @@
   --font-main: 'Cinzel', Georgia, serif;
 }
 
-/* 推荐直接用标准 CSS */
-body {
-  background-color: #000;
-  color: #fff;
-  font-family: var(--font-main), sans-serif;
-}
+

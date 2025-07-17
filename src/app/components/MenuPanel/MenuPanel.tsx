@@ -28,29 +28,34 @@ const menuItems = [
 
 export default function MenuPanel({ show, onSelect }: Props) {
   return (
-    <motion.div
-      initial={{ y: -600 }}
-      animate={{ y: show ? 100 : -800, opacity: show ? 1 : 0 }}
-      transition={{ type: 'spring', stiffness: 60 }}
-      className={`z-50 absolute right-28 top-1/5 w-[400px] mx-auto bg-gradient-to-br from-gray-900 to-black border-4 border-amber-700 rounded-xl shadow-[0_0_30px_rgba(255,191,0,0.4)] p-6 ${cinzel.className}`}
-    >
-      <h1
-        className="text-center text-3xl font-bold text-amber-400 mb-6 tracking-widest drop-shadow-[0_0_5px_gold] "
-      >
-        A NEW DAY WILL COME
-      </h1>
+        <motion.div
+          initial={{ y: -600 }}
+          animate={{ y: show ? 100 : -800, opacity: show ? 1 : 0 }}
+          transition={{ type: 'spring', stiffness: 60 }}
+          className={`z-50 fixed top--20 md:absolute md:right-28 md:top-0
+                      w-full md:w-[360px] h-[120px] md:h-auto
+                      flex flex-wrap md:flex-col items-center justify-center md:justify-start
+                      bg-gradient-to-br from-gray-900 to-black border-b-4 md:border-b-0 md:border-4 border-amber-700 rounded-none md:rounded-xl
+                      shadow-[0_0_30px_rgba(255,191,0,0.4)] p-2 md:p-6 ${cinzel.className}`}
+                  >
+          <h1 className="hidden md:block text-center text-3xl font-bold text-amber-400 mb-6 tracking-widest drop-shadow-[0_0_5px_gold]">
+            A NEW DAY WILL COME
+          </h1>
 
-      <ul className="flex flex-col gap-4">
-        {menuItems.map((item, idx) => (
-          <li key={idx}>
-            <SoundButton
-              text={item.title}
-              icon={item.icon}
-              onClick={() => onSelect(item.panel)}
-            />
-          </li>
-        ))}
-      </ul>
-    </motion.div>
+          <ul className=" 
+                      flex flex-wrap md:flex-col gap-2 md:gap-4 w-full 
+                      justify-center md:justify-start">
+            {menuItems.map((item, idx) => (
+              <li key={idx}>
+                <SoundButton
+                  text={item.title}
+                  icon={item.icon}
+                  onClick={() => onSelect(item.panel)}
+                />
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+
   )
 }

@@ -166,9 +166,9 @@ export default function ExperiencePanel({
       initial={{ y: -500, opacity: 0 }}
       animate={{ y: show ? 100 : -800, opacity: show ? 1 : 0 }}
       transition={{ type: 'spring', stiffness: 65 }}
-      className={`absolute top-4/11 left-2/5 -translate-x-1/2 -translate-y-1/10 z-40 w-[1250px] max-h-[90vh] min-h-[680px] bg-gradient-to-br from-black to-gray-900 border-4 border-amber-700 rounded-xl shadow-[0_0_40px_rgba(255,191,0,0.3)] p-8 flex flex-col ${cinzel.className}`}
-    >
-      <h1 className="text-center text-3xl font-[Cinzel] text-amber-300 mb-6 drop-shadow">
+      className={`absolute top-10 md:top-2 left-2.7 md:left-35 z-40 w-[95vw] max-w-[1250px] max-h-[90vh] min-h-[680px] bg-gradient-to-br from-black to-gray-900 border-4 border-amber-700 rounded-xl shadow-[0_0_40px_rgba(255,191,0,0.3)] p-4 md:p-8 flex flex-col ${cinzel.className}`}
+     >
+      <h1 className="text-center text-xl md:text-3xl font-[Cinzel] text-amber-300 mb-6 drop-shadow">
         My Experience
       </h1>
 
@@ -178,13 +178,18 @@ export default function ExperiencePanel({
         loop
         grabCursor
         navigation
-        slidesPerView={3}
+        slidesPerView={1}
+        breakpoints={{
+          640: { slidesPerView: 1 },
+          768: { slidesPerView: 2 },
+          1024: { slidesPerView: 3 }
+        }}
         effect="creative"
         creativeEffect={{
           prev: { translate: ['-115px', 0, 0], scale: 0.85, shadow: true },
           next: { translate: ['140px', 0, 0], scale: 0.85, shadow: true }
         }}
-        className="w-full h-[500px]"
+        className="w-full h-[80vh] md:h-[500px]"
       >
         {experiences.map((exp, idx) => (
           <SwiperSlide
@@ -196,10 +201,10 @@ export default function ExperiencePanel({
               <p className="italic text-amber-300 text-sm">
                 {exp.period} – {exp.role}
               </p>
-              <p className="text-sm leading-relaxed">{exp.description}</p>
+              <p className="md:text-sm text-xs leading-relaxed">{exp.description}</p>
             </div>
 
-            <div className="flex justify-center mt-30">
+            <div className="flex justify-center mt-22%">
               <button
                 onClick={() => handleShowcase(exp)}
                 className="bg-gradient-to-r from-amber-600 to-yellow-600 hover:from-amber-500 hover:to-yellow-500 text-black font-semibold py-2 px-6 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 border border-yellow-400"
@@ -220,7 +225,7 @@ export default function ExperiencePanel({
             className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
             onClick={closeShowcase}
           >
-            <div className="relative w-full max-w-[1250px] h-[600px] flex flex-wrap items-center justify-center gap-6 p-8">
+            <div className="relative w-full max-w-[95vw] h-[80vh] flex flex-wrap justify-center overflow-y-auto gap-4 p-4 md:p-8">
             {showcaseImages.map((image, index) => (
               <motion.div
                 key={image.id}
@@ -315,7 +320,7 @@ export default function ExperiencePanel({
               exit={{ scale: 0.5, opacity: 0 }}
               transition={{ duration: 0.3 }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-[50vw] max-h-[60vh] flex flex-col items-center justify-center"
+              className="relative w-[80vw] md:w-[40vw] h-auto max-h-[80vh] flex flex-col items-center justify-center"
             >
               <img
                 src={enlargedImage.url}

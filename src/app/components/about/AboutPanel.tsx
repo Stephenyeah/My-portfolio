@@ -15,17 +15,20 @@ export default function AboutPanel({ show }: { show: boolean }) {
       initial={{ y: -500, opacity: 0 }}
       animate={{ y: show ? 100 : -800, opacity: show ? 1 : 0 }}
       transition={{ type: 'spring', stiffness: 65 }}
-      className= {`z-50 absolute left-2/5 top-4/5 -translate-x-1/2 -translate-y-1/10 w-[1180px] bg-gradient-to-br from-gray-900 to-black border-4 border-amber-700 rounded-xl shadow-[0_0_30px_rgba(255,191,0,0.4)] p-6 overflow-hidden ${cinzel.className}`}
+      className= {`z-50 absolute md:left-2/5 left-1/2 md:top-38 -translate-x-1/2 -translate-y-35 top-55
+    w-[95vw] md:w-[1180px] md:max-h-[95vh] max-h-[65vh] max-w-full 
+    bg-gradient-to-br from-gray-900 to-black border-4 border-amber-700 rounded-xl
+    shadow-[0_0_30px_rgba(255,191,0,0.4)] p-4 md:p-6 overflow-hidden ${cinzel.className}`}
     >
-      <h1 className= "text-center text-3xl font-[Cinzel] font-bold text-amber-400 mb-4 tracking-widest drop-shadow-[0_0_5px_gold] ">
+      <h1 className= "text-center text-1xl md:text-3xl font-[Cinzel] font-bold text-amber-400 mb-4 tracking-widest drop-shadow-[0_0_5px_gold] ">
         ABOUT ME
       </h1>
 
-      <div className="flex gap-6">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-6">
         {/* Star Wars-style rolling text */}
-        <div className="relative w-2/3 h-[420px] perspective-[800px] overflow-hidden">
-          <div className="absolute top-full w-full text-center text-yellow-300 text-l font-semibold animate-[crawl_50s_linear_infinite] [transform-style:preserve-3d] [transform-origin:60%_100%]">
-            <div className="w-[95%] mx-auto">
+        <div className="relative w-full md:w-2/3 h-[250px] md:h-[420px] perspective-[800px] overflow-hidden">
+          <div className="absolute top-full w-full right-9 text-yellow-300 text-l font-semibold animate-[crawl_50s_linear_infinite] [transform-style:preserve-3d] [transform-origin:60%_100%]">
+            <div className="md:w-[95%] w-[125%] ">
               <p>
                 Hello, I’m Stephen Yang, a passionate full-stack developer with a
                 background in software engineering from Guangzhou University. Currently,
@@ -82,7 +85,7 @@ export default function AboutPanel({ show }: { show: boolean }) {
         </div>
 
         {/* Video CV section */}
-        <div className="w-1/2 aspect-video rounded-lg overflow-hidden border-2 border-yellow-600 shadow-md">
+        <div className="w-full md:w-1/2 aspect-video rounded-lg overflow-hidden border-2 border-yellow-600 shadow-md mt-4 md:mt-0">
           <iframe
             src="https://www.youtube.com/embed/qiJ_7N956f4"
             title="About Me Video"
